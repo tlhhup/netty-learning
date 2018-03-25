@@ -8,6 +8,7 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import org.tlh.netty.client.decoder.TimeDecoder;
 import org.tlh.netty.client.handler.TimeClientHandler;
 
 public class TimeClient {
@@ -30,7 +31,11 @@ public class TimeClient {
                     .handler(new ChannelInitializer<SocketChannel>() {
                         @Override
                         protected void initChannel(SocketChannel ch) throws Exception {
-                            ch.pipeline().addLast(new TimeClientHandler());
+                            //该处理器存在拆包的问题
+                            //ch.pipeline().addLast(new TimeClientHandler());
+                            //ch.pipeline().addLast(new TimeClientHandlerAdvance());
+                            //通过添加解码处理器处理拆包问题,其执行的顺序按添加的顺序处理
+                            ch.pipeline().addLast(new TimeDecoder(),new TimeClientHandler());
                         }
                     });
             //启动客户端
