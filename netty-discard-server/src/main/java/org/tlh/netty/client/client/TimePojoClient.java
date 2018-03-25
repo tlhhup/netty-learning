@@ -8,9 +8,10 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
-import org.tlh.netty.client.handler.TimeClientHandler;
+import org.tlh.netty.client.decoder.TimePojoDecoder;
+import org.tlh.netty.client.handler.TimePojoClientHandler;
 
-public class TimeClient {
+public class TimePojoClient {
 
     public static void main(String[] args) throws Exception{
         int port=8080;
@@ -30,11 +31,7 @@ public class TimeClient {
                     .handler(new ChannelInitializer<SocketChannel>() {
                         @Override
                         protected void initChannel(SocketChannel ch) throws Exception {
-                            //该处理器存在拆包的问题
-                            ch.pipeline().addLast(new TimeClientHandler());
-                            //ch.pipeline().addLast(new TimeClientHandlerAdvance());
-                            //通过添加解码处理器处理拆包问题
-                            //ch.pipeline().addLast(new TimeDecoder(),new TimeClientHandler());
+                            ch.pipeline().addLast(new TimePojoDecoder(),new TimePojoClientHandler());
                         }
                     });
             //启动客户端

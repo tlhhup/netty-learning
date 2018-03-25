@@ -3,13 +3,14 @@ package org.tlh.netty.client.decoder;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ByteToMessageDecoder;
+import org.tlh.netty.entity.UnixTime;
 
 import java.util.List;
 
 /**
- * 通过解码处理器解决拆包的问题
+ * 通过解码处理器将数据解析为实体对象
  */
-public class TimeDecoder extends ByteToMessageDecoder{
+public class TimePojoDecoder extends ByteToMessageDecoder{
 
     @Override
     protected void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception {
@@ -17,7 +18,7 @@ public class TimeDecoder extends ByteToMessageDecoder{
             return;
 
         //添加数据到流中，将数据添加到out中标示解码成功
-        out.add(in.readBytes(4));//读取4个字节的数据
+        out.add(new UnixTime(in.readUnsignedInt()));
     }
 
 }
