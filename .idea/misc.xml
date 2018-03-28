@@ -5,6 +5,7 @@
       <list>
         <option value="$PROJECT_DIR$/netty-discard-server/pom.xml" />
         <option value="$PROJECT_DIR$/netty-spring/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-refreshtoken/pom.xml" />
       </list>
     </option>
   </component>
