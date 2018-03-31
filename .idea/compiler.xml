@@ -8,12 +8,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="netty-discard-server" />
         <module name="netty-spring" />
+        <module name="spring-bean-lifeCycle" />
         <module name="spring-refreshtoken" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="netty-discard-server" target="1.8" />
       <module name="netty-spring" target="1.8" />
+      <module name="spring-bean-lifeCycle" target="1.8" />
       <module name="spring-refreshtoken" target="1.8" />
     </bytecodeTargetLevel>
   </component>

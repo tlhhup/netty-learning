@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/netty-discard-server/netty-discard-server.iml" filepath="$PROJECT_DIR$/netty-discard-server/netty-discard-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/netty-spring/netty-spring.iml" filepath="$PROJECT_DIR$/netty-spring/netty-spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-bean-lifeCycle/spring-bean-lifeCycle.iml" filepath="$PROJECT_DIR$/spring-bean-lifeCycle/spring-bean-lifeCycle.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-refreshtoken/spring-refreshtoken.iml" filepath="$PROJECT_DIR$/spring-refreshtoken/spring-refreshtoken.iml" />
     </modules>
   </component>
