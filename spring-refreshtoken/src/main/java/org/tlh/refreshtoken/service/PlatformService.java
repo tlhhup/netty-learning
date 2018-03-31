@@ -30,6 +30,12 @@ public class PlatformService {
         return true;
     }
 
+    @RefreshToken
+    public boolean addDevice(String name,AuthInfo authInfo) {
+        logger.debug("addDevice--->"+authInfo.getExpiredTime() + " name:"+name);
+        return true;
+    }
+
     public boolean delete(AuthInfo authInfo){
         logger.debug("addDevice--->"+authInfo.getExpiredTime() + "");
         return true;

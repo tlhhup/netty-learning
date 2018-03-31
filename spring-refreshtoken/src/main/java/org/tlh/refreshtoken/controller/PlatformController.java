@@ -18,6 +18,12 @@ public class PlatformController {
         return "ok";
     }
 
+    @RequestMapping("/addDevice1")
+    public String addDevice1(){
+        this.platformService.addDevice("test",App.authInfo);
+        return "ok";
+    }
+
     @RequestMapping("/delete")
     public String delete(){
         this.platformService.delete(App.authInfo);
